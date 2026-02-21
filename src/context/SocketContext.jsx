@@ -13,7 +13,8 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (!user || !tenant) return;
 
-    const s = io('/', { transports: ['websocket', 'polling'] });
+    const socketUrl = import.meta.env.VITE_API_URL?.replace('/api', '') || 'https://inventory-management-system-fronten-tau.vercel.app';
+    const s = io(socketUrl, { transports: ['websocket', 'polling'] });
 
     s.on('connect', () => {
       s.emit('join-tenant', tenant.id);

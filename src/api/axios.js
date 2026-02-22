@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'https://inventory-management-system-backend-qavwefnld.vercel.app/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://backend-five-zeta-60.vercel.app/api';
 
 const API = axios.create({
   baseURL: API_BASE,
